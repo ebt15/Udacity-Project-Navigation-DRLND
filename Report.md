@@ -34,7 +34,8 @@ DQN takes a game image as a input, in this project, we only learning from discre
     LR = 5e-4 # learning rate for the neural network
     UPDATE_EVERY = 4 # how often to update the network
     
-### some advice to choose hyper-parameter
+### Plan of attack to choose hyper-parameters
+
 #### eps
 0<= ε <=1<br>
 the agent selects the greedy action with probability 1- ε <br>
