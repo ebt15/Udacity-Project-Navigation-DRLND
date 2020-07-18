@@ -54,8 +54,8 @@ if you want to care more about future, you should take a large 𝞬
     Episode 400	Average Score: 11.94
     Episode 500	Average Score: 13.08
     Episode 600	Average Score: 14.39
-    Episode 750	Average Score: 15.01
-    Environment solved in 750 episodes!	Average Score: 15.01  
+    Episode 700	Average Score: 15.05
+    Environment solved in 685 episodes!	Average Score: 15.05  
 ![train_network](https://github.com/ebt15/Udacity-Project-Navigation-DRLND/blob/master/assets/network.png?raw=true)
 
 ## Ideas for Future Work
