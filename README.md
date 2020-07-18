@@ -13,7 +13,7 @@ This project is the first one in Udacity's Deep Reinforcement Learning Nanodegre
 
 <p align="center">
 
-![Trained Agent][image1]
+
 
 </p>
 
@@ -54,6 +54,10 @@ Experience replay lets online reinforcement learning agents remember and reuse e
 
 Dueling networks utilize two streams: one that estimates the state value function `V(s)`, and another that estimates the advantage for each action `A(s,a)`. These two values are then combined to obtain the desired Q-values.
 
+# Project Starter Code
+The project starter code can be found below, in case you want to run this project yourself.
+
+Also, the original Udacity repo for this project can be found [here](https://github.com/udacity/deep-reinforcement-learning/tree/master/p1_navigation).
 
 ## Getting Started
 
