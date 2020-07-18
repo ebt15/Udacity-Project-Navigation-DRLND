@@ -23,7 +23,7 @@ DQN takes a game image as a input, in this project, we only learning from discre
     QNetwork(
       (Fully connected layer1): Linear(in_features=37, out_features=128, bias=True)
       (Fully connected layer2): Linear(in_features=128, out_features=64, bias=True)
-      (Fully connected layer4): Linear(in_features=64, out_features=4, bias=True)
+      (Fully connected layer3): Linear(in_features=64, out_features=4, bias=True)
     ) 
 ### hyper-parameter
 
