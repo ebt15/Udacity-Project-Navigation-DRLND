@@ -21,22 +21,18 @@ DQN takes a game image as a input, in this project, we only learning from discre
 ### The Q-Network is shown below
 
     QNetwork(
-      (Fully connected layer1): Linear(in_features=37, out_features=64, bias=True)
-      (Fully connected layer2): Linear(in_features=64, out_features=64, bias=True)
-      (Fully connected layer3): Linear(in_features=64, out_features=64, bias=True)
+      (Fully connected layer1): Linear(in_features=37, out_features=128, bias=True)
+      (Fully connected layer2): Linear(in_features=128, out_features=64, bias=True)
       (Fully connected layer4): Linear(in_features=64, out_features=4, bias=True)
     ) 
 ### hyper-parameter
 
-    BUFFER_SIZE = int(1e5)  # replay buffer size
-    BATCH_SIZE = 64  # minibatch size
-    GAMMA = 0.99  # discount factor
-    TAU = 1e-3  # for soft update of target parameters
-    LR = 5e-4  # learning rate
-    UPDATE_EVERY = 4  # how often to update the network
-    eps_start (float): starting value of epsilon, for epsilon-greedy action selection
-    eps_end (float): minimum value of epsilon
-    eps_decay (float): multiplicative factor (per episode) for decreasing epsilon
+    BUFFER_SIZE = int(1e5) # replay buffer size
+    BATCH_SIZE = 64 # minibatch size
+    GAMMA = 0.99 # Discount factor for q-learning
+    TAU = 1e-3 # for soft update of target parameters
+    LR = 5e-4 # learning rate for the neural network
+    UPDATE_EVERY = 4 # how often to update the network
     
 ### some advice to choose hyper-parameter
 #### eps
@@ -53,25 +49,19 @@ if you want to care more about future, you should take a large 𝞬
 ## Train The Network
     Episode 100	Average Score: 0.33
     Episode 200	Average Score: 2.68
-    Episode 300	Average Score: 7.26
-    Episode 400	Average Score: 10.07
-    Episode 500	Average Score: 11.49
-    Episode 600	Average Score: 12.94
-    Episode 700	Average Score: 14.08
-    Episode 800	Average Score: 14.39
-    Episode 851	Average Score: 15.01
-    Environment solved in 751 episodes!	Average Score: 15.01  
+    Episode 300	Average Score: 7.24
+    Episode 400	Average Score: 11.94
+    Episode 500	Average Score: 13.08
+    Episode 600	Average Score: 14.39
+    Episode 750	Average Score: 15.01
+    Environment solved in 750 episodes!	Average Score: 15.01  
 ![train_network](https://github.com/ebt15/Udacity-Project-Navigation-DRLND/blob/master/assets/network.png?raw=true)
 
 ## Ideas for Future Work
-- choose a different network architecture
-    - deeper network
-    - use dropout
-- use different learning algorithm 
-    - [prioritized experience replay](https://arxiv.org/abs/1511.05952)
-    - [Dueling DQN](https://arxiv.org/abs/1511.06581)
-    - [Rainbow](https://arxiv.org/abs/1710.02298)
-- tune the values of the hyper-parameters
-    
-    
-    
+
+I’m planning to add following features in this:
+• [Dueling DQN](https://arxiv.org/abs/1511.06581)
+• Double DQN
+• [Prioritized Experience Replay](https://arxiv.org/abs/1511.05952)
+• Apart from this, I’m planning to use the DQN to train using the pixels of the environment,
+  similar thing was done in the DQN pape
