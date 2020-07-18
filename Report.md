@@ -60,8 +60,12 @@ if you want to care more about future, you should take a large 𝞬
 ## Ideas for Future Work
 
 I’m planning to add following features in this:
+
 • [Dueling DQN](https://arxiv.org/abs/1511.06581)
+
 • Double DQN
+
 • [Prioritized Experience Replay](https://arxiv.org/abs/1511.05952)
+
 • Apart from this, I’m planning to use the DQN to train using the pixels of the environment,
-  similar thing was done in the DQN pape
+  similar thing was done in the DQN paper
