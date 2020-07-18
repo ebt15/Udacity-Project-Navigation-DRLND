@@ -1,22 +1,21 @@
-# Udacity Exercise Navigation Report
-The navigation project is using Deep Q-learing to train an agent to collect yellow bananas in an unity environment.
-## The Environment Description
-In this project, you will train an agent to navigate (and collect bananas!) in a large, square world.
+## Deep Q-Networks
 
-A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana. Thus, the goal of your agent is to collect as many yellow bananas as possible while avoiding blue bananas.
+Deep Q-Learning algorithm represents the optimal action-value function q∗​ as a neural network (instead of a table).
+Reinforcement learning is notoriously unstable when neural networks are used to represent the action values. Deep Q-Learning algorithm addresses these instabilities by using two key features:
+Experience Replay: a rolling history of past data via a re-play pool. Using the replay pool the behavior distribution is averaged out over many of its previous states smoothing out learning and avoiding oscillations. This has the advantage that the step of the updates is potentially used in many weight updates.
+Fixed Q-Targets: use a target network to represent the old Q-Function, which will be used to calculate the loss of every action during training. At every step, the q-function values change so we can use a single network and the value estimates could spiral out of control.
 
-The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around the agent's forward direction. Given this information, the agent has to learn how to best select actions. Four discrete actions are available, corresponding to:
 
-- 0 - move forward.
-- 1 - move backward.
-- 2 - turn left.
-- 3 - turn right.
+## Deep Q-Learning Improvements
 
-The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes.
-## Learning Algorithm
-We use deep Q-learning algorithm to train the agent. If you do not be familiar with it, please read this [research paper](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
+Several improvements to the original Deep Q-Learning algorithm have been suggested. Over the next several videos, we’ll look at three of the more prominent ones.
 
-DQN takes a game image as a input, in this project, we only learning from discrete action space 
+Double DQN: Deep Q-Learning tends to overestimate action values. Double Q-Learning has been shown to work well in practice to help with this.
+
+Prioritized Experience Re-play: Deep Q-Learning samples experience transitions uniformly from a replay memory. Prioritized experienced replay is based on the idea that the agent can learn more effectively from some transitions than from others, and the more important transitions should be sampled with higher probability.
+
+Dueling DQN: Currently, in order to determine which states are (or are not) valuable, we have to estimate the corresponding action values for each action. However, by replacing the traditional Deep Q-Network (DQN) architecture with a dueling architecture, we can assess the value of each state, without having to learn the effect of each action.
+
 
 ### The Q-Network is shown below
 
@@ -33,19 +32,6 @@ DQN takes a game image as a input, in this project, we only learning from discre
     TAU = 1e-3 # for soft update of target parameters
     LR = 5e-4 # learning rate for the neural network
     UPDATE_EVERY = 4 # how often to update the network
-    
-### Plan of attack to choose hyper-parameters
-
-#### eps
-0<= ε <=1<br>
-the agent selects the greedy action with probability 1- ε <br>
-the agent selects an action uniform at random from the set of available(non-greedy AND greedy) actions with probability  ε <br>
-so if  ε = 0, the agent always select the greedy action<br>
-#### GAMMA
-0<= 𝞬 <=1<br>
-the agent will only care about if immediate rewards if 𝞬 = 0<br>
-the agent will care more about future rewards if 𝞬 is large<br>
-if you want to care more about future, you should take a large 𝞬
 
 ## Train The Network
     Episode 100	Average Score: 0.33
@@ -60,13 +46,4 @@ if you want to care more about future, you should take a large 𝞬
 
 ## Ideas for Future Work
 
-I’m planning to add following features in this:
-
-• [Dueling DQN](https://arxiv.org/abs/1511.06581)
-
-• Double DQN
-
-• [Prioritized Experience Replay](https://arxiv.org/abs/1511.05952)
-
-• Apart from this, I’m planning to use the DQN to train using the pixels of the environment,
-  similar thing was done in the DQN paper
+I’m planning to use the DQN to train using the pixels of the environment.
