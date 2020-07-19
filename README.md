@@ -73,4 +73,4 @@ Also, the original Udacity repo for this project can be found [here](https://git
 
 2. Place the file in the working folder and unzip the file
 
-3. Start working with `Navigation.ipynb`
+3. Start working with `Agent_Navigation.ipynb`
